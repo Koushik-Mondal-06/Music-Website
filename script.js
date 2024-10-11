@@ -129,6 +129,7 @@ let songs = [
     poster: "musicimg/img-21.jpg",
   },
 ];
+
 let song_left = document.getElementById("song-left");
 let song_right = document.getElementById("song-right");
 let song = document.getElementsByClassName("song")[0];
@@ -165,7 +166,7 @@ player.addEventListener("click", () => {
 });
 let makeallplay = () => {
   Array.from(document.getElementsByClassName("playlist")).forEach((ell) => {
-    ell.src = "playlist.svg";
+    ell.src = " allsvg/playlist.svg";
   });
 };
 let mackallbackground = () => {
@@ -197,7 +198,7 @@ Array.from(document.getElementsByClassName("playlist ")).forEach((e) => {
     ].style.background = " rgb(105, 105, 105, 0.4)";
   });
 //makeallplay();
-//Array.from(document.getElementsByClassName("playlist"))[a-1].src = "playlist2.svg";
+//Array.from(document.getElementsByClassName("playlist"))[index-1].src = "allsvg/playlist2.svg";
 
 
 
@@ -220,15 +221,15 @@ if (sec2<10) {
   sec2 = `0${sec2}`
 }
 currentstart.innerText= `${min2} : ${sec2}`;
-let progressbar = parseInt((music_curr/music_dur)*100);
+let progressbar = ((music_curr/music_dur)*100);
 seek.value = progressbar;
 let seekbar = seek.value;
 
 
 }
 )
-seek.addEventListener('change', () => {
-  music.currentTime = seek.value *( music.duration / 100)
+seek.addEventListener('change' , () => {
+  music.currentTime = seek.value * music.duration / 100.00
 }
 )
 let volicon = document.getElementsByClassName("volicon");
@@ -274,7 +275,7 @@ next.addEventListener('click',() => {
 
   music.src = `audio/song-${index}.mp3`;
   posterplayer.src = `musicimg/img-${index}.jpg`;
-  document.getElementById("player").src = "pause.svg";
+  document.getElementById("player").src = "allsvg/pause.svg";
   music.play();
   let songtitles = songs.filter((ell) => {
     return ell.id == index;
@@ -287,5 +288,13 @@ next.addEventListener('click',() => {
   Array.from(document.getElementsByClassName("song-item"))[
     index - 1
   ].style.background = " rgb(105, 105, 105, 0.4)";
+}
+)
+document.querySelector(".hamb").addEventListener('click',() => {
+  document.querySelector(".left").style.left ="0"
+}
+)
+document.querySelector(".close").addEventListener('click',() => {
+  document.querySelector(".left").style.left ="-100%"
 }
 )
