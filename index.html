@@ -19,14 +19,15 @@
             <div class="home bg-gray rounded m-1 p-1">
                 <div class="logo">
                     <img class="invert  logo1" src="allsvg/logo.svg" alt="logo">
-                    <img src="allsvg/close.svg" alt="" class="close invert"></div>
+                    <img src="allsvg/close.svg" alt="" class="close invert">
+                </div>
                 <ul>
                     <li><img class="invert" src="allsvg/home.svg" alt="home">Home</li>
                     <li><img class="invert" src="allsvg/scarch.svg" alt="search">Search</li>
 
                 </ul>
             </div>
-            <div class="library bg-gray rounded m-1 p-1">
+            <div class="library bg-gray rounded m-1 p-1 ">
                 <div class="head">
                     <img class="invert" src="allsvg/library.svg" alt="library">
                     <h3>Your Library</h3>
@@ -160,8 +161,8 @@
                     the world
                 </p>
                 <div class="butt">
-                    <button class="playButton">PLAY</button>
-                    <button>FOLLOW</button>
+                    <div id="playbutten">PLAY</div>
+                    <div>FOLLOW</div>
                 </div>
 
             </div>
@@ -342,7 +343,7 @@
 
                 <div class="top-art-top">
                     <div class="start">
-                        <img class="invert" src="song.svg" alt="">
+                        <img class="invert" src="allsvg/song.svg" alt="">
                         <h1>Top Singers</h1>
                     </div>
 
@@ -467,26 +468,41 @@
 
     </div>
     <div class="player flex rounded">
+
+
+
         <div class="wave">
             <div class="wave1 wave2 "></div>
             <div class="wave1 wave3"></div>
             <div class="wave1 wave4"></div>
         </div>
-        <img src="musicimg/img-1.jpg" alt="" id="posterplayer">
-        <h5 id=title>Pink Blue 
-            <div class="sub">Tsumyoki,Bharg</div>
-        </h5>
-        <div class="icon">
-            <img class="invert back" id="back" src="allsvg/back.svg" alt="">
-            <img class="invert play" id="player" src="allsvg/play.svg" alt="">
-            
-            <img class="invert next" id="next" src="allsvg/next.svg" alt="">
+      
+            <img src="musicimg/img-1.jpg" alt="" id="posterplayer">
+            <h5 id=title>Pink Blue
+                <div class="sub">Tsumyoki,Bharg</div>
+            </h5>
+        
+        <div class="phone">
+
+            <div class="icon">
+                <img class="invert back" id="back" src="allsvg/back.svg" alt="">
+                <img class="invert play" id="player" src="allsvg/play.svg" alt="">
+
+                <img class="invert next" id="next" src="allsvg/next.svg" alt="">
+            </div>
+
+            <div class="phonly">
+                <div class="time">
+                    <span id="currentstart">0.00 </span>
+                    <span> /</span>
+                    <span id="currentend">4.35</span>
+                </div>
+                <div class="bar">
+                    <input type="range" id="seek" min="0" max="100" value="0.00">
+                </div>
+
+            </div>
         </div>
-        <span id="currentstart">0.00</span>
-        <div class="bar">
-            <input type="range" id="seek" min="0" max="100" value="0.00">
-        </div>
-        <span id="currentend">4.35</span>
         <div class="vol flex">
             <img class="invert volicon" src="allsvg/vol.svg" alt="">
             <input type="range" id="vol" min="0" max="100" value="100">

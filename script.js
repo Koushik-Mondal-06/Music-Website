@@ -174,13 +174,12 @@ let mackallbackground = () => {
     ell.style.background = " rgb(105, 105, 105, 0)";
   });
 };
-let  index = 0;
+let index = 0;
 let title = document.getElementById("title");
 let posterplayer = document.getElementById("posterplayer");
 Array.from(document.getElementsByClassName("playlist ")).forEach((e) => {
   e.addEventListener("click", (el) => {
-   
-     index = el.target.id;
+    index = el.target.id;
     music.src = `audio/song-${index}.mp3`;
     posterplayer.src = `musicimg/img-${index}.jpg`;
     document.getElementById("player").src = "allsvg/pause.svg";
@@ -197,79 +196,70 @@ Array.from(document.getElementsByClassName("playlist ")).forEach((e) => {
       index - 1
     ].style.background = " rgb(105, 105, 105, 0.4)";
   });
-//makeallplay();
-//Array.from(document.getElementsByClassName("playlist"))[index-1].src = "allsvg/playlist2.svg";
-
-
-
+  //makeallplay();
+  //Array.from(document.getElementsByClassName("playlist"))[index-1].src = "allsvg/playlist2.svg";
 });
-let currentstart = document.getElementById('currentstart');
-let currentend = document.getElementById('currentend');
-let seek = document.getElementById('seek');
-music.addEventListener('timeupdate',() => {
-  let music_curr =music.currentTime;
+let currentstart = document.getElementById("currentstart");
+let currentend = document.getElementById("currentend");
+let seek = document.getElementById("seek");
+music.addEventListener("timeupdate", () => {
+  let music_curr = music.currentTime;
   let music_dur = music.duration;
-  let min1 = Math.floor(music_dur/60);
-  let sec1 = Math.floor(music_dur%60);
-  if (sec1<10) {
-    sec1 = `0${sec1}`
+  let min1 = Math.floor(music_dur / 60);
+  let sec1 = Math.floor(music_dur % 60);
+  if (sec1 < 10) {
+    sec1 = `0${sec1}`;
   }
-currentend.innerText= `${min1} : ${sec1}`
-let min2 = Math.floor(music_curr/60)
-let sec2 = Math.floor(music_curr%60)
-if (sec2<10) {
-  sec2 = `0${sec2}`
-}
-currentstart.innerText= `${min2} : ${sec2}`;
-let progressbar = ((music_curr/music_dur)*100);
-seek.value = progressbar;
-let seekbar = seek.value;
-
-
-}
-)
-seek.addEventListener('change' , () => {
-  music.currentTime = seek.value * music.duration / 100.00
-}
-)
+  currentend.innerText = `${min1} : ${sec1}`;
+  let min2 = Math.floor(music_curr / 60);
+  let sec2 = Math.floor(music_curr % 60);
+  if (sec2 < 10) {
+    sec2 = `0${sec2}`;
+  }
+  currentstart.innerText = `${min2} : ${sec2}`;
+  let progressbar = (music_curr / music_dur) * 100;
+  seek.value = progressbar;
+  let seekbar = seek.value;
+});
+seek.addEventListener("change", () => {
+  music.currentTime = (seek.value * music.duration) / 100.0;
+});
 let volicon = document.getElementsByClassName("volicon");
-let vol = document.getElementById('vol');
- 
-vol .addEventListener('change', () => {
+let vol = document.getElementById("vol");
+
+vol.addEventListener("change", () => {
   let vol_a = vol.value;
-  music.volume = vol_a/100;
-}
-)
-let back = document .getElementById('back');
-let next = document .getElementById('next');
-back.addEventListener('click', () => {
-  index -=1
-  console.log(index)
-  if (index<1) {
+  music.volume = vol_a / 100;
+});
+let back = document.getElementById("back");
+let next = document.getElementById("next");
+back.addEventListener("click", () => {
+  index -= 1;
+  console.log(index);
+  if (index < 1) {
     index = Array.from(document.getElementsByClassName("song-item")).length;
   }
   music.src = `audio/song-${index}.mp3`;
-    posterplayer.src = `musicimg/img-${index}.jpg`;
-    document.getElementById("player").src = "allsvg/pause.svg";
-    music.play();
-    let songtitles = songs.filter((ell) => {
-      return ell.id == index;
-    });
-    songtitles.forEach((els) => {
-      let { songName } = els;
-      title.innerHTML = songName;
-    });
-    mackallbackground();
-    Array.from(document.getElementsByClassName("song-item"))[
-      index - 1
-    ].style.background = " rgb(105, 105, 105, 0.4)";
-  
+  posterplayer.src = `musicimg/img-${index}.jpg`;
+  document.getElementById("player").src = "allsvg/pause.svg";
+  music.play();
+  let songtitles = songs.filter((ell) => {
+    return ell.id == index;
+  });
+  songtitles.forEach((els) => {
+    let { songName } = els;
+    title.innerHTML = songName;
+  });
+  mackallbackground();
+  Array.from(document.getElementsByClassName("song-item"))[
+    index - 1
+  ].style.background = " rgb(105, 105, 105, 0.4)";
+});
 
-}
-)
-next.addEventListener('click',() => {
-  index +=1;
-  if (index>Array.from(document.getElementsByClassName("song-item")).length) {
+next.addEventListener("click", () => {
+ 
+  index ++
+  if (index > Array.from(document.getElementsByClassName("song-item")).length ) {
     index = 1;
   }
 
@@ -288,13 +278,16 @@ next.addEventListener('click',() => {
   Array.from(document.getElementsByClassName("song-item"))[
     index - 1
   ].style.background = " rgb(105, 105, 105, 0.4)";
-}
-)
-document.querySelector(".hamb").addEventListener('click',() => {
-  document.querySelector(".left").style.left ="0"
-}
-)
-document.querySelector(".close").addEventListener('click',() => {
-  document.querySelector(".left").style.left ="-100%"
-}
-)
+});
+document.querySelector(".hamb").addEventListener("click", () => {
+  document.querySelector(".left").style.left = "0";
+});
+document.querySelector(".close").addEventListener("click", () => {
+  document.querySelector(".left").style.left = "-120%";
+})
+document.querySelector(".playbutten").addEventListener("click", () => {
+  music.src ="audio/song-10.mp3";
+  posterplayer.src = "musicimg/img-10.jpg";
+  document.getElementById("player").src = "allsvg/pause.svg";
+  music.play();
+})

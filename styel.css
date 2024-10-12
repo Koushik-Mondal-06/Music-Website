@@ -32,7 +32,6 @@ body::-webkit-scrollbar {
   background-color: #1c243a;
   position: relative;
   margin-right: 30px;
-  
 }
 .player {
   width: 99vw;
@@ -41,8 +40,9 @@ body::-webkit-scrollbar {
   background-color: #111727;
   display: flex;
   align-items: center;
+
   margin: 5px;
-  position: fixed;
+  position: absolute;
   margin-left: 10px;
   margin-bottom: 30px;
 }
@@ -77,24 +77,23 @@ body::-webkit-scrollbar {
   padding: 15px;
 }
 
-.logo{
+.logo {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
 }
-.close{
+.close {
   cursor: pointer;
   opacity: 0;
 }
-.logo .logo1{
+.logo .logo1 {
   width: 30px;
 }
 .library {
   height: 71vh;
   overflow: auto;
 }
-.library::-webkit-scrollbar{
+.library::-webkit-scrollbar {
   display: none;
 }
 
@@ -111,9 +110,6 @@ body::-webkit-scrollbar {
   margin-top: 20px;
   width: 20vw;
   height: 500px;
-
-  
-  
 }
 .song-menu::-webkit-scrollbar {
   display: none;
@@ -196,20 +192,21 @@ body::-webkit-scrollbar {
     height: 15px;
   }
 }
+
 .player img {
   width: 35px;
   height: 35px;
-  margin-left: 20px;
+
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
 }
 .player h5 {
-  width: 150px;
+  width: 120px;
   color: white;
 
-  margin-left: 18px;
+  margin-left: 15px;
   overflow: hidden;
   font-size: 14px;
 }
@@ -222,7 +219,7 @@ body::-webkit-scrollbar {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 5px;
+  gap: 20px;
 }
 .icon img {
   width: 20px;
@@ -233,35 +230,55 @@ body::-webkit-scrollbar {
   width: 35px;
   font-weight: 400;
 }
+
 #currentstart {
-  margin-left: 20px;
+  height: 2px;
 }
-.bar {
+
+.phone {
+  margin-left: 10%;
+  width: 58%;
+  height: 70px;
+
   position: relative;
-  width: 45%;
+  justify-content: center;
+}
+.phonly {
+  position: relative;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  
+}
+.phonly.bar {
+  margin-left: 10px;
+  position: relative;
+  width: 98%;
+  height: 2px;
   height: 2px;
   display: flex;
   background-color: #1c243a;
 }
 .bar input {
-  width: 100%;
-  position: relative;
+  margin-left: 20px;
+  width: 87%;
+  height: 2px;
+  position: absolute;
   cursor: pointer;
 }
-#currentend {
-  margin-left: 20px;
-}
+
 .vol img {
   width: 20px;
 }
 .vol {
-  width: 18vw;
+  margin-left: 30px;
+  width: 10vw;
   align-items: center;
 }
 .vol input {
-  margin-left: 10px;
+  margin-left: 15px;
   height: 2px;
-  width: 65%;
+  width: 60%;
   cursor: pointer;
 }
 .logo2 {
@@ -280,13 +297,12 @@ body::-webkit-scrollbar {
   width: 50%;
   height: 300px;
 }
-.imgsong img  {
+.imgsong img {
   width: 100%;
-  height: 32.50vh;
+  height: 32.5vh;
   position: absolute;
   z-index: -1;
 }
-
 
 .right {
   z-index: 2;
@@ -297,7 +313,7 @@ body::-webkit-scrollbar {
 
   margin: auto;
   display: flex;
-  
+
   justify-content: space-between;
 }
 .right nav ul {
@@ -386,10 +402,11 @@ body::-webkit-scrollbar {
   color: #4c5262;
   margin: 5px;
 }
-.butt {
+.content .butt {
   margin-top: 70px;
+  display: flex;
 }
-Button {
+.content .butt div{
   width: 170px;
   border-radius: 20px;
   height: 35px;
@@ -398,8 +415,11 @@ Button {
   cursor: pointer;
   transition: 0.3s linear;
   border: 2px solid rgb(41, 212, 212);
+  display: flex;
+  justify-content: center;
+  align-items:center ;
 }
-.butt .playButton:hover {
+.content.butt div:hover {
   background: transparent;
   color: rgb(66, 139, 139);
 }
@@ -586,40 +606,177 @@ a:hover {
   margin-right: 60px;
   width: 20px;
   cursor: pointer;
- opacity: 0;
+  opacity: 0;
 }
 
 @media (max-width: 1700px) {
   .left {
     position: absolute;
-    left: -100%;
-    transition: all .5s;
+    left: -120%;
+    transition: all 0.5s;
     z-index: 3;
     width: 390px;
     padding: 0;
+    margin-left: 0px;
   }
   .right {
     width: 99vw;
-    overflow-x:auto;
+    overflow-x: auto;
   }
-  .right::-webkit-scrollbar{
+  .right::-webkit-scrollbar {
     display: none;
   }
   .player {
     margin-right: 10px;
     width: 98vw;
   }
-  .right nav ul li span{
+  .right nav ul li span {
     bottom: 1px;
   }
-.library{
-  height: 66vh;
+  .library {
+    height: 66vh;
+  }
+  .hamb {
+    opacity: 1;
+  }
+  .close {
+    opacity: 1;
+  }
+}
+@media (max-width: 800px) {
+  .left {
+    width: 330px;
+    margin-left: 0px;
+  }
+  .right {
+    margin-right: 0px;
+    height: 100vh;
+  }
+  .song-menu {
+    width: 75vw;
+  }
+  .library {
+    padding-left: 0px;
+  }
+  .right nav {
+    width: 90vw;
+  }
+  .right nav ul li {
+    font-size: 10px;
+    margin-right: 20px;
+  }
+  .search {
+    opacity: 0;
+  }
+  .user {
+    width: 45px;
+    margin-top: 8px;
+  }
+  .user img {
+    box-shadow: none;
+  }
+  .butt {
+    margin-top: 40px;
+  }
+  .butt Button {
+    width: 100px;
+  }
+  .imgsong img {
+    height: 30vh;
+  }
+  .mainPart .song .cart .song-pic .musicImg {
+    width: 100px;
+    margin-right: 20px;
+  }
+  .mainPart .song {
+    height: 20vh;
+    display: flex;
+    align-items: center;
+  }
+  .topsong .start img {
+    width: 20px;
+  }
+  .topsong .start h1 {
+    font-size: 25px;
+    margin-top: 9px;
+  }
+  .top-art-top .start img {
+    width: 20px;
+  }
+  .top-art-top .start h1 {
+    font-size: 25px;
+    margin-top: 9px;
+  }
+  .mainPart .singers .cart .pic .singer-pic {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+  }
+  .mainPart .singers {
+    height: 20vh;
+  }
+  .mainPart .singers .cart h4 {
+    margin-left: 8px;
+    font-size: 13px;
+  }
+  .mainPart .song h5 {
+    font-size: 13px;
+  }
+  .player {
+    z-index: 10;
+    height: 70px;
+    width: 96vw;
+    position: absolute;
+    position: fixed;
+    top: 90%;
+    transition: all 0.3s;
+  }
+  .wave {
+    width: 20px;
+    margin-left: 5px;
+  }
+  .saveicon {
+    display: none;
+  }
+  .logo2 {
+    display: none;
+  }
+  .vol img {
+    display: none;
+  }
+  .vol input {
+    display: none;
+  }
+  .player h5 {
+    width: 100px;
+    font-size: 8px;
+    margin-left: 5px;
+    display: none;
+  }
 
+  .player img {
+    width: 25px;
+    height: 25px;
+    margin-left: 5px;
+    
+  }
+  .player .wave{
+    display: none;
+  }
+  .phone{
+    margin-left: 0;
+    width: 95%;
+  }
+  #posterplayer{
+    margin-left: 5PX;
+    margin-right: 10PX;
+    margin-bottom: 40PX;
+  }
+.icon{
+  margin-left: 30PX;
 }
-.hamb{
-  opacity: 1;
-}
-.close{
-  opacity: 1;
+
+.bar input{
+margin-left: 8px;
 }
 }
