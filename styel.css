@@ -678,8 +678,8 @@ a:hover {
   .butt {
     margin-top: 40px;
   }
-  .butt Button {
-    width: 100px;
+  .butt div {
+    width: 90px;
   }
   .imgsong img {
     height: 30vh;
